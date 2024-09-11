@@ -1,0 +1,15 @@
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/bin/Debug/net6.0/SistemaInventario.Modelos.deps.json
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/bin/Debug/net6.0/SistemaInventario.Modelos.dll
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/bin/Debug/net6.0/SistemaInventario.Modelos.pdb
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/bin/Debug/net6.0/SistemaInventario.Utilidades.dll
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/bin/Debug/net6.0/SistemaInventario.Utilidades.pdb
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/obj/Debug/net6.0/SistemaInventario.Modelos.csproj.AssemblyReference.cache
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/obj/Debug/net6.0/SistemaInventario.Modelos.GeneratedMSBuildEditorConfig.editorconfig
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/obj/Debug/net6.0/SistemaInventario.Modelos.AssemblyInfoInputs.cache
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/obj/Debug/net6.0/SistemaInventario.Modelos.AssemblyInfo.cs
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/obj/Debug/net6.0/SistemaInventario.Modelos.csproj.CoreCompileInputs.cache
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/obj/Debug/net6.0/SistemaInventario.Modelos.csproj.CopyComplete
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/obj/Debug/net6.0/SistemaInventario.Modelos.dll
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/obj/Debug/net6.0/refint/SistemaInventario.Modelos.dll
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/obj/Debug/net6.0/SistemaInventario.Modelos.pdb
+/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventario.Modelos/obj/Debug/net6.0/ref/SistemaInventario.Modelos.dll
