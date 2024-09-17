@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 using SistemaInventario.AccesoDatos.Context;
 using SistemaInventario.AccesoDatos.Repository.IRepository;
 using SistemaInventario.Modelos.Models;
