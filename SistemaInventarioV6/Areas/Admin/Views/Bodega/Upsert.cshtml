@@ -15,7 +15,7 @@
         {
             //Update
             titulo = "Actualizar bodega";
-            <input type="hidden" asp-for="Id"/>
+            <input type="hidden" asp-for="Id" id="id"/>
         }
         <div class="col-12 border-bottom p-0">
             <h2 class="text-primary">@titulo</h2>
@@ -24,7 +24,7 @@
         <div class="row mb-2 mt-2">
             <div class="form-group col-md-6">
                 <label>Nombre</label>
-                <input type="text" asp-for="Nombre" class="form-control" placeholder="Nombre de la bodega"/>
+                <input type="text" asp-for="Nombre" class="form-control" placeholder="Nombre de la bodega" id="name"/>
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
         </div>
@@ -65,4 +65,27 @@
 @section Scripts
 {
     <partial name="_ValidationScriptsPartial"/>
+    <script>
+        document.getElementById("name").addEventListener('change', function (){
+            ValidateName();
+        });
+        
+        function ValidateName(){
+            var url = '@Url.Content("~/")' + "Admin/Bodega/ValidateName";
+            var id = '#id';
+            var name = '#name'
+            
+            $.getJSON(url,{id: $(id).val(), name: $(name).val()}, function (data)
+            {
+                $.each(data,  function (key, value)
+                {
+                    if(value){
+                        var name = document.getElementById("name")
+                        swal("Error", "Ya existe una bodega con ese nombre", "error");
+                        name.value = ""; 
+                    }
+                });                
+            })
+        }
+    </script>
 }

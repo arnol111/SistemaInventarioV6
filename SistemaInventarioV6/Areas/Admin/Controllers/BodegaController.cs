@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using SistemaInventario.AccesoDatos.Context;
 using SistemaInventario.AccesoDatos.Repository.IRepository;
 using SistemaInventario.Modelos.Models;
+using SistemaInventario.Utilidades;
 
 namespace SistemaInventarioV6.Areas.Admin.Controllers;
 
@@ -50,15 +51,18 @@ public class BodegaController : Controller
             if (bodega.Id == 0)
             {
                 await _unitOfWork.Bodega.Add(bodega);
+                TempData[DS.Success] = "Bodega agregada correctamente";
             }
             else
             {
                 _unitOfWork.Bodega.Update(bodega);
+                TempData[DS.Success] = "Bodega actualizada correctamente";
             }
 
             await _unitOfWork.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        TempData[DS.Fail] = "Error";
         return View(bodega);
     }
     
@@ -83,6 +87,31 @@ public class BodegaController : Controller
         _unitOfWork.Bodega.Remove(bodegaDb);
         await _unitOfWork.SaveChangesAsync();
         return Json(new { success = true, message = "Bodega eliminada correctamente." });
+    }
+
+    [ActionName("ValidateName")]
+    public async Task<IActionResult> ValidateName(string name, int id = 0)
+    {
+           bool flag = false;
+           var bodegas = await _unitOfWork.Bodega.GetAll();
+
+           if (id == 0)
+           {
+               flag = bodegas.Any(b=> b.Nombre.ToLower() == name.ToLower().Trim());
+           }
+           else
+           {
+               flag = bodegas.Any(b=> b.Nombre.ToLower() == name.ToLower().Trim() && b.Id != id);
+           }
+
+           if (flag)
+           {
+               return Json(new { data = true });
+           }
+           else
+           {
+               return Json(new { data = false });
+           }
     }
     #endregion
 }

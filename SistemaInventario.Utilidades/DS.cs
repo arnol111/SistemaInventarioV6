@@ -1,6 +1,8 @@
 ﻿namespace SistemaInventario.Utilidades
 {
-    public class DS
+    public static class DS
     {
+        public const string Success = "Exitosamente";
+        public const string Fail = "Error";            
     }
 }
