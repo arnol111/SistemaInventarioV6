@@ -9,10 +9,13 @@ public class UnitOfWork : IUnitOfWork
     
     public IBodegaRepository Bodega { get; private set; }
     
+    public ICategoriaRepository Categoria { get; private set; }
+    
     public UnitOfWork(ApplicationDbContext context)
     {
         _context = context;
         Bodega = new BodegaRepository(_context);
+        Categoria = new CategoriaRepository(_context);
     }
     
     public void Dispose()

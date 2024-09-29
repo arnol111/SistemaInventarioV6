@@ -9,6 +9,7 @@ namespace SistemaInventario.AccesoDatos.Context
     public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<Bodega> Bodegas { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
         
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

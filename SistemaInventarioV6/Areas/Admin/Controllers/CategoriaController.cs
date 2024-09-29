@@ -1,19 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
-using SistemaInventario.AccesoDatos.Context;
 using SistemaInventario.AccesoDatos.Repository.IRepository;
 using SistemaInventario.Modelos.Models;
 using SistemaInventario.Utilidades;
 
 namespace SistemaInventarioV6.Areas.Admin.Controllers;
-
 [Area("Admin")]
-public class BodegaController : Controller
+public class CategoriaController : Controller
 {
     private readonly IUnitOfWork _unitOfWork;
-
-    public BodegaController(IUnitOfWork unitOfWork)
+    
+    public CategoriaController(IUnitOfWork unitOfWork)
     {
-        _unitOfWork = unitOfWork;
+        _unitOfWork = unitOfWork;    
     }
     
     // GET
@@ -21,87 +19,87 @@ public class BodegaController : Controller
     {
         return View();
     }
-
+    
     public async Task<IActionResult> Upsert(int? id)
     {
-        var bodega = new Bodega();
+        var categoria = new Categoria();
 
         if (id == null)
         {
             //create new Bodega
-            bodega.Estado = true;
-            return View(bodega);
+            categoria.Estado = true;
+            return View(categoria);
         }
         //Update Bodega
-        bodega = await _unitOfWork.Bodega.GetById(id.Value);
+        categoria = await _unitOfWork.Categoria.GetById(id.Value);
 
-        if (bodega == null)
+        if (categoria == null)
         {
             return NotFound();
         }
-        return View(bodega);
+        return View(categoria);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Upsert(Bodega bodega)
+    public async Task<IActionResult> Upsert(Categoria categoria)
     {
         if (ModelState.IsValid)
         {
-            if (bodega.Id == 0)
+            if (categoria.Id == 0)
             {
-                await _unitOfWork.Bodega.Add(bodega);
-                TempData[DS.Success] = "Bodega agregada correctamente";
+                await _unitOfWork.Categoria.Add(categoria);
+                TempData[DS.Success] = "Categoria agregada correctamente";
             }
             else
             {
-                _unitOfWork.Bodega.Update(bodega);
-                TempData[DS.Success] = "Bodega actualizada correctamente";
+                _unitOfWork.Categoria.Update(categoria);
+                TempData[DS.Success] = "Categoria actualizada correctamente";
             }
 
             await _unitOfWork.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         TempData[DS.Fail] = "Error";
-        return View(bodega);
+        return View(categoria);
     }
     
     #region API
 
     [HttpGet]
-    public async Task<IActionResult> GetBodegas()
+    public async Task<IActionResult> GetCategories()
     {
-        var allCategories = await _unitOfWork.Bodega.GetAll();
+        var allCategories = await _unitOfWork.Categoria.GetAll();
         return Json(new {data = allCategories});
     }
 
     [HttpPost]
     public async Task<IActionResult> Delete(int id)
     {
-        var bodegaDb = await _unitOfWork.Bodega.GetById(id);
+        var categoriaDB = await _unitOfWork.Categoria.GetById(id);
 
-        if (bodegaDb == null)
+        if (categoriaDB == null)
         {
-            return Json(new { success = false, message = "El bodega seleccionada no existe." });
+            return Json(new { success = false, message = "El categoria seleccionada no existe." });
         }
-        _unitOfWork.Bodega.Remove(bodegaDb);
+        _unitOfWork.Categoria.Remove(categoriaDB);
         await _unitOfWork.SaveChangesAsync();
-        return Json(new { success = true, message = "Bodega eliminada correctamente." });
+        return Json(new { success = true, message = "Categoria eliminada correctamente." });
     }
 
     [ActionName("ValidateName")]
     public async Task<IActionResult> ValidateName(string name, int id = 0)
     {
            bool flag = false;
-           var bodegas = await _unitOfWork.Bodega.GetAll();
+           var categoriasDB = await _unitOfWork.Categoria.GetAll();
 
            if (id == 0)
            {
-               flag = bodegas.Any(b=> b.Nombre.ToLower() == name.ToLower().Trim());
+               flag = categoriasDB.Any(b=> b.Nombre.ToLower() == name.ToLower().Trim());
            }
            else
            {
-               flag = bodegas.Any(b=> b.Nombre.ToLower() == name.ToLower().Trim() && b.Id != id);
+               flag = categoriasDB.Any(b=> b.Nombre.ToLower() == name.ToLower().Trim() && b.Id != id);
            }
 
            if (flag)
