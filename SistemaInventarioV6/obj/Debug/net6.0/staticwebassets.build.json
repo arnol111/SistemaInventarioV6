@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KsQTptqVA9aV2csgscM42+0PtaQRvSdPVrbvKSVg7AA=",
+  "Hash": "W91LbSxbAsoyrfYC6yrQxWLUMUFEaMLU+QxJ8RP4C/A=",
   "Source": "SistemaInventarioV6",
   "BasePath": "_content/SistemaInventarioV6",
   "Mode": "Default",
@@ -1137,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/Categoria.js"
+    },
+    {
+      "Identity": "/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventarioV6/wwwroot/js/Marca.js",
+      "SourceId": "SistemaInventarioV6",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventarioV6/wwwroot/",
+      "BasePath": "_content/SistemaInventarioV6",
+      "RelativePath": "js/Marca.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/Marca.js"
     },
     {
       "Identity": "/home/arnol113/Sonda.Udemy/SistemaInventarioV6/SistemaInventarioV6/wwwroot/js/site.js",

@@ -6,5 +6,7 @@ public interface IUnitOfWork : IDisposable
     
     ICategoriaRepository Categoria { get; }
     
+    IMarcaRepository Marca { get; }
+    
     Task SaveChangesAsync();
 }

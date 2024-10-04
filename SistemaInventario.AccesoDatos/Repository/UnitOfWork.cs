@@ -11,11 +11,14 @@ public class UnitOfWork : IUnitOfWork
     
     public ICategoriaRepository Categoria { get; private set; }
     
+    public IMarcaRepository Marca { get; private set; }
+    
     public UnitOfWork(ApplicationDbContext context)
     {
         _context = context;
         Bodega = new BodegaRepository(_context);
         Categoria = new CategoriaRepository(_context);
+        Marca = new MarcaRepository(_context);
     }
     
     public void Dispose()

@@ -11,6 +11,8 @@ namespace SistemaInventario.AccesoDatos.Context
         public DbSet<Bodega> Bodegas { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         
+        public DbSet<Marca> Marcas { get; set; }
+        
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

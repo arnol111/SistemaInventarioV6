@@ -4,7 +4,7 @@ using SistemaInventario.Modelos.Models;
 
 namespace SistemaInventario.AccesoDatos.Configuracion;
 
-public class BodegaConfiguracion : IEntityTypeConfiguration<Bodega>
+public class BodegaConfiguration : IEntityTypeConfiguration<Bodega>
 {
     public void Configure(EntityTypeBuilder<Bodega> builder)
     {

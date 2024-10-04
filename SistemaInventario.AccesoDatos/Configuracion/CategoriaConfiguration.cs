@@ -4,7 +4,7 @@ using SistemaInventario.Modelos.Models;
 
 namespace SistemaInventario.AccesoDatos.Configuracion;
 
-public class CategoriaConfiguracion: IEntityTypeConfiguration<Categoria>
+public class CategoriaConfiguration: IEntityTypeConfiguration<Categoria>
 {
     public void Configure(EntityTypeBuilder<Categoria> builder)
     {
